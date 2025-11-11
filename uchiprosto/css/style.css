@@ -1,0 +1,1771 @@
+/* Reset и базовые стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #2c3e50;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ОБЩИЕ СТИЛИ ШАПКИ ДЛЯ ВСЕХ СТРАНИЦ - КАК НА ГЛАВНОЙ */
+.header {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 1rem 0;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+.logo {
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: #6600FF;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2.5rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #2c3e50;
+    font-weight: 600;
+    padding: 0.7rem 1.2rem;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+    background: #4a90e2;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(74, 144, 226, 0.3);
+}
+
+.auth-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.auth-links a {
+    text-decoration: none;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    font-weight: 600;
+    padding: 0.8rem 1.8rem;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+    display: inline-block;
+    text-align: center;
+    min-width: 120px;
+    border: none;
+    cursor: pointer;
+}
+
+.auth-links a:hover {
+    background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(74, 144, 226, 0.4);
+}
+
+/* Основной контент для всех страниц */
+.main-content {
+    margin-top: 80px;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+/* Форма входа и регистрации */
+.login-form,
+.register-form {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+}
+
+.login-title,
+.register-title {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 2rem;
+    text-align: center;
+    font-weight: 600;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #333;
+    font-weight: 500;
+}
+
+.form-control {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid #e1e5e9;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: #fff;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.btn-login,
+.btn-register {
+    width: 100%;
+    padding: 1rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 1.5rem;
+}
+
+.btn-login:hover,
+.btn-register:hover {
+    background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+}
+
+.form-links {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.form-links a {
+    color: #667eea;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.form-links a:hover {
+    text-decoration: underline;
+}
+
+.divider {
+    height: 1px;
+    background: #e1e5e9;
+    margin: 1.5rem 0;
+}
+
+.login-link,
+.register-link {
+    text-align: center;
+}
+
+.login-link a,
+.register-link a {
+    color: #667eea;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.login-link a:hover,
+.register-link a:hover {
+    text-decoration: underline;
+}
+
+/* Стили для выбора типа пользователя */
+.user-type-selector {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.user-type-option {
+    flex: 1;
+}
+
+.user-type-option input {
+    display: none;
+}
+
+.user-type-label {
+    display: block;
+    padding: 1rem;
+    border: 2px solid #e1e5e9;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    background: white;
+}
+
+.user-type-option input:checked + .user-type-label {
+    border-color: #667eea;
+    background: rgba(102, 126, 234, 0.05);
+}
+
+.user-type-label:hover {
+    border-color: #c5d4ff;
+    transform: translateY(-2px);
+}
+
+.user-type-title {
+    display: block;
+    color: #2c3e50;
+    margin-bottom: 0.3rem;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.user-type-description {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Дополнительные поля */
+.additional-fields {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-top: 1rem;
+    border-left: 4px solid #667eea;
+}
+
+.section-subtitle {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+/* Футер */
+.footer {
+    background: rgba(44, 62, 80, 0.9);
+    color: white;
+    text-align: center;
+    padding: 1.5rem 2rem;
+    margin-top: auto;
+    backdrop-filter: blur(10px);
+}
+
+/* Сообщения об ошибках */
+.alert {
+    padding: 1rem;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+
+.alert-error {
+    background: #ffe6e6;
+    color: #d63031;
+    border: 1px solid #ffcccc;
+}
+
+.alert-success {
+    background: #e6ffe6;
+    color: #27ae60;
+    border: 1px solid #ccffcc;
+}
+
+/* Сетка преподавателей */
+.tutors-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+/* Карточка преподавателя */
+.tutor-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.tutor-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.tutor-image {
+    height: 200px;
+    background: #e9ecef;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.tutor-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.no-photo {
+    color: #6c757d;
+    font-size: 1rem;
+}
+
+.tutor-info {
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.tutor-info h3 {
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+    font-size: 1.4rem;
+}
+
+.tutor-subject {
+    color: #667eea;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.tutor-details {
+    margin-bottom: 1rem;
+}
+
+.tutor-details p {
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+    color: #555;
+}
+
+.tutor-description {
+    border-top: 1px solid #e9ecef;
+    padding-top: 1rem;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+.tutor-description p {
+    color: #666;
+    line-height: 1.5;
+    font-style: italic;
+}
+
+.tutor-actions {
+    display: flex;
+    gap: 0.8rem;
+    margin-top: auto;
+}
+
+/* Кнопки для всех страниц */
+.btn {
+    display: inline-block;
+    padding: 0.7rem 1.2rem;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    font-size: 0.95rem;
+    flex: 1;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.btn-secondary {
+    background: #6c757d;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background: #5a6268;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(108, 117, 125, 0.4);
+}
+
+.no-results {
+    text-align: center;
+    padding: 3rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.no-results p {
+    color: #6c757d;
+    font-size: 1.2rem;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+        padding: 0 1rem;
+    }
+    
+    .logo {
+        font-size: 1.8rem;
+        order: 1;
+    }
+    
+    .nav-links {
+        order: 3;
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+        max-width: 100%;
+        margin: 0.5rem 0;
+    }
+    
+    .nav-links a {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    .auth-links {
+        order: 2;
+        margin: 0.5rem 0;
+        gap: 0.8rem;
+    }
+
+    .auth-links a {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+        min-width: 140px;
+    }
+    
+    .login-form,
+    .register-form {
+        padding: 2rem;
+        margin: 1rem;
+    }
+    
+    .login-title,
+    .register-title {
+        font-size: 1.5rem;
+    }
+
+    .user-type-selector {
+        flex-direction: column;
+    }
+
+    .tutors-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .tutor-actions {
+        flex-direction: column;
+    }
+    
+    .btn {
+        width: 100%;
+    }
+    
+    .footer {
+        padding: 1rem 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding: 0.8rem 0;
+    }
+
+    .header-container {
+        gap: 0.8rem;
+    }
+
+    .nav-links {
+        gap: 0.5rem;
+    }
+
+    .nav-links a {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.85rem;
+    }
+
+    .auth-links {
+        gap: 0.5rem;
+    }
+
+    .auth-links a {
+        padding: 0.5rem 1rem;
+        font-size: 0.85rem;
+        min-width: 120px;
+    }
+
+    .login-form,
+    .register-form {
+        padding: 1.5rem;
+    }
+
+    .footer {
+        padding: 0.8rem 1rem;
+        font-size: 0.9rem;
+    }
+    
+    .tutor-card {
+        margin: 0 -10px;
+    }
+    
+    .tutor-info {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .nav-links {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .nav-links a {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .auth-links {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .auth-links a {
+        width: 100%;
+        min-width: auto;
+    }
+}
+
+/* Дополнительные утилиты */
+.text-center {
+    text-align: center;
+}
+
+.mt-2 { margin-top: 2rem; }
+.mb-2 { margin-bottom: 2rem; }
+.p-2 { padding: 2rem; }
+
+/* Стили для страницы помощи */
+.help-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.help-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding: 2rem 0;
+}
+
+.help-header h1 {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.help-header p {
+    font-size: 1.2rem;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.help-content {
+    display: grid;
+    gap: 3rem;
+}
+
+/* Стили для FAQ */
+.faq-section {
+    background: white;
+    border-radius: 15px;
+    padding: 2.5rem;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.faq-section h2 {
+    color: #2c3e50;
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+.faq-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.faq-item {
+    border: 2px solid #e1e5e9;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.faq-item.active {
+    border-color: #667eea;
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.1);
+}
+
+.faq-question {
+    padding: 1.5rem;
+    background: #f8f9fa;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.faq-question:hover {
+    background: #e9ecef;
+}
+
+.faq-question h3 {
+    color: #2c3e50;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.faq-toggle {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #667eea;
+    transition: transform 0.3s ease;
+}
+
+.faq-item.active .faq-toggle {
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    padding: 0 1.5rem;
+    display: none;
+    background: white;
+}
+
+.faq-answer p {
+    color: #555;
+    line-height: 1.6;
+    padding: 1.5rem 0;
+    margin: 0;
+    border-top: 1px solid #e1e5e9;
+}
+
+/* Стили для формы поддержки */
+.contact-support {
+    background: white;
+    border-radius: 15px;
+    padding: 2.5rem;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.support-card h2 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+.support-card p {
+    color: #666;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
+
+.support-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.support-form .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.btn-support {
+    width: 100%;
+    padding: 1rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+}
+
+.btn-support:hover {
+    background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+}
+
+/* Адаптивность для страницы помощи */
+@media (max-width: 768px) {
+    .help-header h1 {
+        font-size: 2rem;
+    }
+    
+    .help-header p {
+        font-size: 1.1rem;
+    }
+    
+    .faq-section,
+    .contact-support {
+        padding: 2rem;
+    }
+    
+    .support-form .form-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .faq-question {
+        padding: 1.25rem;
+    }
+    
+    .faq-question h3 {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .help-container {
+        padding: 0 15px;
+    }
+    
+    .help-header {
+        padding: 1rem 0;
+        margin-bottom: 2rem;
+    }
+    
+    .help-header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .faq-section,
+    .contact-support {
+        padding: 1.5rem;
+    }
+    
+    .faq-question {
+        padding: 1rem;
+    }
+}
+
+/* Стили для страницы анкет репетиторов */
+.tutors-container {
+    display: flex;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.filters-sidebar {
+    width: 300px;
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    height: fit-content;
+    position: sticky;
+    top: 100px;
+}
+
+.filters-sidebar h3 {
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.filter-form .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.filter-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #2c3e50;
+    font-weight: 500;
+}
+
+.filter-form select,
+.filter-form input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid #e1e5e9;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.filter-form select:focus,
+.filter-form input:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.price-range {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.price-range input {
+    flex: 1;
+}
+
+.price-range span {
+    color: #666;
+    font-weight: bold;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+}
+
+.checkbox-label input[type="checkbox"] {
+    width: auto;
+}
+
+.btn-filter {
+    width: 100%;
+    padding: 1rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 1rem;
+}
+
+.btn-filter:hover {
+    background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    display: block;
+    text-align: center;
+    padding: 0.75rem;
+    border: 2px solid #667eea;
+    color: #667eea;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+    background: #667eea;
+    color: white;
+}
+
+.tutors-content {
+    flex: 1;
+}
+
+.results-info {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+}
+
+.results-info p {
+    margin: 0.5rem 0;
+    color: #2c3e50;
+}
+
+.active-filters {
+    font-size: 0.9rem;
+    color: #666 !important;
+}
+
+.tutors-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.tutor-item {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    display: flex;
+    gap: 1.5rem;
+    transition: all 0.3s ease;
+    border-left: 4px solid #667eea;
+}
+
+.tutor-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.2);
+}
+
+.tutor-avatar {
+    flex-shrink: 0;
+}
+
+.avatar-placeholder {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.tutor-info {
+    flex: 1;
+}
+
+.tutor-info h3 {
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
+}
+
+.tutor-subjects {
+    color: #667eea;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.tutor-details {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+
+.tutor-experience,
+.tutor-rating {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.tutor-rating {
+    color: #ffc107;
+    font-weight: 600;
+}
+
+.reviews-count {
+    color: #666;
+    font-size: 0.8rem;
+    margin-left: 0.5rem;
+}
+
+.tutor-price {
+    color: #e74c3c;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.not-accepting {
+    color: #dc3545;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+.tutor-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    min-width: 150px;
+}
+
+.tutor-btn-primary {
+    padding: 0.75rem 1rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.tutor-btn-primary:hover {
+    background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
+    transform: translateY(-2px);
+}
+
+.no-results {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.no-results h3 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+}
+
+.no-results p {
+    color: #666;
+    margin-bottom: 2rem;
+}
+
+/* Анимации */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .tutors-container {
+        flex-direction: column;
+    }
+    
+    .filters-sidebar {
+        width: 100%;
+        position: static;
+    }
+    
+    .tutor-item {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .tutor-details {
+        justify-content: center;
+    }
+    
+    .tutor-actions {
+        min-width: auto;
+    }
+}
+
+.admin-actions {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.action-form {
+    display: flex;
+    gap: 0.5rem;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    flex: 1;
+}
+
+.compact-select {
+    padding: 0.5rem;
+    border: 1px solid #e1e5e9;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    width: 120px;
+    height: 36px;
+}
+
+.compact-textarea {
+    min-height: 36px;
+    padding: 0.5rem;
+    font-size: 0.85rem;
+    width: 200px;
+    border: 1px solid #e1e5e9;
+    border-radius: 6px;
+    resize: vertical;
+}
+
+.compact-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+    height: 36px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+}
+
+/* Специфичные стили для кнопок в админ-панели */
+.btn-admin-compact {
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+    height: 36px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    min-width: 80px;
+}
+
+.btn-primary {
+    background: #667eea;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #5a6fd8;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+}
+
+.btn-success {
+    background: #28a745;
+    color: white;
+}
+
+.btn-success:hover {
+    background: #218838;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(40, 167, 69, 0.3);
+}
+
+.btn-danger {
+    background: #dc3545;
+    color: white;
+}
+
+.btn-danger:hover {
+    background: #c82333;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(220, 53, 69, 0.3);
+}
+
+/* Улучшенные стили для формы в админ-панели */
+.form-group {
+    margin-bottom: 0.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.25rem;
+    font-weight: 600;
+    font-size: 0.8rem;
+    color: #2c3e50;
+}
+
+/* Выравнивание элементов формы */
+.action-form .form-group {
+    margin-bottom: 0;
+}
+
+.action-form .form-group:last-child {
+    align-self: flex-end;
+}
+
+/* ===== СТИЛИ ДЛЯ СТРАНИЦЫ ПРОФИЛЯ ПРЕПОДАВАТЕЛЯ ===== */
+
+.profile-container {
+    max-width: 1200px;
+    margin: 100px auto 2rem;
+    padding: 0 1rem;
+}
+
+.profile-header {
+    background: white;
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.profile-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.tutor-avatar-large {
+    width: 120px;
+    height: 120px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 2.5rem;
+    font-weight: bold;
+    flex-shrink: 0;
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+}
+
+.profile-header-content {
+    flex: 1;
+}
+
+.profile-header h1 {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.tutor-subjects {
+    font-size: 1.3rem;
+    color: #667eea;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.tutor-meta {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.meta-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #666;
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+.meta-item i {
+    color: #667eea;
+}
+
+.profile-header-actions {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.price-tag {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+}
+
+.accepting-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.accepting-true {
+    background: #d4edda;
+    color: #155724;
+    border: 2px solid #28a745;
+}
+
+.accepting-false {
+    background: #f8d7da;
+    color: #721c24;
+    border: 2px solid #dc3545;
+}
+
+.profile-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.profile-section {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.section-title {
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    border-bottom: 2px solid #667eea;
+    padding-bottom: 0.5rem;
+}
+
+.about-content {
+    line-height: 1.8;
+    color: #555;
+    font-size: 1.1rem;
+}
+
+/* Стили для расписания */
+.schedule-container {
+    overflow-x: auto;
+}
+
+.schedule-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-bottom: 1.5rem;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.schedule-table th {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 1.2rem 0.8rem;
+    text-align: center;
+    font-weight: 600;
+    font-size: 0.95rem;
+    border: none;
+    position: relative;
+}
+
+.schedule-table th.time-header {
+    background: #2c3e50;
+    font-size: 1rem;
+}
+
+.schedule-table th:not(:first-child) {
+    border-left: 1px solid rgba(255,255,255,0.2);
+}
+
+.schedule-table td {
+    padding: 1.2rem 0.8rem;
+    text-align: center;
+    border: none;
+    transition: all 0.3s ease;
+    position: relative;
+    font-weight: 500;
+}
+
+.schedule-table td.time-slot {
+    background: #f8f9fa;
+    color: #2c3e50;
+    font-weight: 600;
+    border-right: 2px solid #e9ecef;
+}
+
+.schedule-table .schedule-cell {
+    cursor: pointer;
+    position: relative;
+    min-width: 60px;
+    border-radius: 8px;
+}
+
+.schedule-table .schedule-cell:hover {
+    transform: scale(1.05);
+    z-index: 1;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.schedule-table .schedule-cell.available {
+    background: #d4f8e8;
+    color: #155724;
+    border: 2px solid #28a745;
+}
+
+.schedule-table .schedule-cell.available:hover {
+    background: #b8f5d8;
+}
+
+.schedule-table .schedule-cell.busy {
+    background: #ffe6e6;
+    color: #721c24;
+    border: 2px solid #dc3545;
+}
+
+.schedule-table .schedule-cell.busy:hover {
+    background: #ffd6d6;
+}
+
+.schedule-table .schedule-cell.empty {
+    background: #f8f9fa;
+    color: #6c757d;
+    border: 2px solid #e9ecef;
+}
+
+.schedule-table .schedule-cell.empty:hover {
+    background: #e9ecef;
+}
+
+.status-indicator {
+    font-size: 1.1rem;
+    font-weight: bold;
+    display: block;
+}
+
+.schedule-legend {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.legend-color {
+    width: 16px;
+    height: 16px;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.legend-color.available {
+    background: #d4f8e8;
+    border: 2px solid #28a745;
+}
+
+.legend-color.busy {
+    background: #ffe6e6;
+    border: 2px solid #dc3545;
+}
+
+.legend-color.empty {
+    background: #f8f9fa;
+    border: 2px solid #e9ecef;
+}
+
+/* Стили для отзывов */
+.reviews-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.review-item {
+    border: 1px solid #e1e5e9;
+    border-radius: 15px;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+    background: #fafbfc;
+}
+
+.review-item:hover {
+    border-color: #667eea;
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.1);
+    transform: translateY(-2px);
+}
+
+.review-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+}
+
+.review-author-info {
+    flex: 1;
+}
+
+.review-author {
+    font-weight: 600;
+    color: #2c3e50;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.review-rating {
+    color: #ffc107;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.rating-value {
+    color: #666;
+    font-size: 0.9rem;
+    font-weight: normal;
+}
+
+.review-date {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.review-comment {
+    color: #555;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+/* Стили для формы связи */
+.contact-section {
+    text-align: center;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 3rem;
+    border-radius: 20px;
+}
+
+.contact-section h3 {
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+}
+
+.contact-section p {
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-form textarea {
+    width: 100%;
+    padding: 1rem;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    resize: vertical;
+    min-height: 120px;
+    font-family: inherit;
+}
+
+.contact-form textarea:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255,255,255,0.3);
+}
+
+.btn-contact {
+    background: white;
+    color: #667eea;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    font-family: inherit;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-contact:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+    background: #f8f9fa;
+}
+
+.login-prompt {
+    background: white;
+    color: #2c3e50;
+    padding: 1.5rem;
+    border-radius: 10px;
+    display: inline-block;
+}
+
+/* Адаптивность для страницы профиля */
+@media (max-width: 768px) {
+    .profile-container {
+        margin-top: 80px;
+        padding: 0 0.5rem;
+    }
+
+    .profile-header {
+        padding: 2rem 1rem;
+        flex-direction: column;
+        text-align: center;
+        gap: 1.5rem;
+    }
+
+    .profile-header h1 {
+        font-size: 2rem;
+    }
+
+    .tutor-meta {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+    }
+
+    .profile-header-actions {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+    }
+
+    .profile-section {
+        padding: 1.5rem;
+    }
+
+    .schedule-table {
+        font-size: 0.85rem;
+    }
+
+    .schedule-table th,
+    .schedule-table td {
+        padding: 0.8rem 0.5rem;
+    }
+
+    .contact-section {
+        padding: 2rem 1rem;
+    }
+
+    .schedule-legend {
+        flex-direction: column;
+        gap: 0.8rem;
+        align-items: center;
+    }
+
+    .review-header {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: left;
+    }
+}
+
+@media (max-width: 480px) {
+    .tutor-avatar-large {
+        width: 80px;
+        height: 80px;
+        font-size: 2rem;
+    }
+
+    .price-tag {
+        font-size: 1.2rem;
+        padding: 0.8rem 1.5rem;
+    }
+
+    .section-title {
+        font-size: 1.3rem;
+    }
+
+    .schedule-table {
+        font-size: 0.8rem;
+    }
+
+    .schedule-table th,
+    .schedule-table td {
+        padding: 0.6rem 0.3rem;
+    }
+
+    .status-indicator {
+        font-size: 1rem;
+    }
+}
